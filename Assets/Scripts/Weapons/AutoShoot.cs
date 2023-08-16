@@ -39,6 +39,7 @@ public class AutoShoot : MonoBehaviour
     {
         yield return _rate;
 
+        while (true)
         {
             float angle = 0f;
 

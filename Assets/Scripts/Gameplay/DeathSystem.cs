@@ -10,8 +10,8 @@ public class DeathSystem : MonoBehaviour
     #endregion 
 
     #region Fields
-    private bool _isDestroy = true;
     [Header("Значения")]
+    [SerializeField] private bool _isDestroy = true;
     [SerializeField] private float _delayDestroy;
     [SerializeField] private UnityEvent _onDeathEvent;
     #endregion
@@ -25,8 +25,10 @@ public class DeathSystem : MonoBehaviour
     {
         for (int i = 0; i < _spawnObjects.Length; i++)
         {
-
+            _spawnObjects[i].Create();
         }
+
+        _onDeathEvent.Invoke();
 
         if (_isDestroy)
         {
@@ -43,6 +45,4 @@ public class DeathSystem : MonoBehaviour
     {
         _colliders = GetComponents<Collider>();
     }
-
-
 }

@@ -30,6 +30,7 @@ public class HealthSystem : MonoBehaviour
     {
         _currentHealth -= damage;
         CheckHealth();
+        UpdateUI();
     }
 
     private void Start()
@@ -71,6 +72,17 @@ public class HealthSystem : MonoBehaviour
         {
             if (_deathScript != null)
                 _deathScript.Death();
+        }
+    }
+
+    private void UpdateUI()
+    {
+        if (_healthBar != null)
+        {
+            Vector3 scale = Vector3.one;
+            float value = _currentHealth / _maxHealth;
+            scale.x = value;
+            _healthBar.transform.localScale = scale;
         }
     }
 }

@@ -11,6 +11,10 @@ public class NodeMove : MonoBehaviour
     [SerializeField] private List<Vector3> _nodes = new();
     #endregion
 
+    #region Properties
+    public List<Vector3> Nodes => _nodes;
+    #endregion
+
     private List<Vector3> GetCurveNodes()
     {
         List<Vector3> curvedNodes = new();
@@ -45,9 +49,14 @@ public class NodeMove : MonoBehaviour
         float oneMinusT = 1f - t;
 
         Vector3 result = Mathf.Pow(oneMinusT, 3f) * p0 +
-                         3 * t * Mathf.Pow(oneMinusT, 2f) * p1 +
-                         Mathf.Pow(3 * t, 2f) * oneMinusT * p2 +
+                         3f * Mathf.Pow(oneMinusT, 2f) * t * p1 +
+                         3f * oneMinusT * (t * t) * p2 +
                          Mathf.Pow(t, 3f) * p3;
+            
+                       /**Mathf.Pow(oneMinusT, 3f) * p0 +
+                         (3 * t) * Mathf.Pow(oneMinusT, 2f) * p1 +
+                         Mathf.Pow(3 * t, 2f) * oneMinusT * p2 +
+                         Mathf.Pow(t, 3f) * p3;*/
 
         return result;
     }
@@ -60,6 +69,14 @@ public class NodeMove : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(curvePositions[i - 1], curvePositions[i]);
+        }
+
+        for (int i = 1; i < _nodes.Count; i++)
+        {
+            Color gizmoColor = Color.yellow;
+            gizmoColor.a = 0.5f;
+            Gizmos.color = gizmoColor;
+            Gizmos.DrawLine(_nodes[i - 1], _nodes[i]);
         }
     }
 }

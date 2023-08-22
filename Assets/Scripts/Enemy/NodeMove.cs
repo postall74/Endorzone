@@ -14,13 +14,17 @@ public class NodeMove : MonoBehaviour
     [Space]
     [Header("Параметры перемещения")]
     [SerializeField] private float _speed = 5f;
+    [Header("Параметры поворота и крена")]
     [SerializeField] private float _rotateSpeed = 2f;
     [SerializeField] private float _bankValue = 5f;
     [SerializeField] private bool _isRotate;
+    [Header("Параметры движения по кругу")]
     [SerializeField] private bool _loopMove;
     [SerializeField] private int _loopToNode;
-
+    [Space]
     private int _realLoopNode;
+    private float _nextAngleGrab;
+    private Quaternion _rotation;
     private Transform _parent;
     #endregion
 
@@ -62,7 +66,7 @@ public class NodeMove : MonoBehaviour
         }
     }
 
-    #region Calculate Nodes
+    #region Methods Calculate Nodes
     private Transform GetParentTransformPosition()
     {
         if (transform.parent)
@@ -124,10 +128,11 @@ public class NodeMove : MonoBehaviour
     }
     #endregion
 
-    #region Movement object
+    #region Methods Movement object
     private IEnumerator StartMove()
     {
-        int posId = 0;
+        float oldAngle = 0f; 
+        int posId = 0;  
         List<Vector3> path = GetCurveNodes();
 
         while (_loopMove || posId < path.Count - 1)
@@ -149,6 +154,26 @@ public class NodeMove : MonoBehaviour
             }
 
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[posId], _speed * Time.deltaTime);
+
+            if (_isRotate)
+            {
+                if (Time.time > _nextAngleGrab)
+                {
+                    _nextAngleGrab = Time.time + 0.5f;
+                    Vector3 direction = path[posId] - transform.localPosition;
+
+                    if (direction.sqrMagnitude > 0.01f)
+                        _rotation = Quaternion.LookRotation(direction, Vector3.up);
+
+                    float zBank = Mathf.Clamp(_rotation.eulerAngles.y - oldAngle, -10f, 10f);
+                    Quaternion bank = Quaternion.Euler(0f, 0f, Mathf.Ceil(zBank) * _bankValue);
+                    _rotation *= bank;
+                    oldAngle = _rotation.eulerAngles.y;
+                }
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, _rotation, _rotateSpeed * Time.deltaTime);
+            }
+
             yield return null;
         }
     }

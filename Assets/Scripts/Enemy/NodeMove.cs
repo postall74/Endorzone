@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,13 +9,54 @@ public class NodeMove : MonoBehaviour
     #endregion
 
     #region Fields
+    [Header("Узлы нод")]
     [SerializeField] private List<Vector3> _nodes = new();
+    [Space]
+    [Header("Параметры перемещения")]
+    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _rotateSpeed = 2f;
+    [SerializeField] private float _bankValue = 5f;
+    [SerializeField] private bool _isRotate;
+    [SerializeField] private bool _loopMove;
+    [SerializeField] private int _loopToNode;
+
+    private int _realLoopNode;
     #endregion
 
     #region Properties
     public List<Vector3> Nodes => _nodes;
     #endregion
 
+    private void OnEnable()
+    {
+        StartCoroutine(StartMove());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(StartMove());
+    }
+
+    private void OnDrawGizmos()
+    {
+        List<Vector3> curvePositions = GetCurveNodes();
+
+        for (int i = 1; i < curvePositions.Count; i++)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(curvePositions[i - 1], curvePositions[i]);
+        }
+
+        for (int i = 1; i < _nodes.Count; i++)
+        {
+            Color gizmoColor = Color.yellow;
+            gizmoColor.a = 0.5f;
+            Gizmos.color = gizmoColor;
+            Gizmos.DrawLine(_nodes[i - 1], _nodes[i]);
+        }
+    }
+
+    #region Calculate Nodes
     private List<Vector3> GetCurveNodes()
     {
         List<Vector3> curvedNodes = new();
@@ -39,6 +81,8 @@ public class NodeMove : MonoBehaviour
             }
         }
 
+        _realLoopNode = (int)(curvedNodes.Count * (_loopToNode / (float)_nodes.Count));
+        
         return curvedNodes;
     }
 
@@ -60,23 +104,35 @@ public class NodeMove : MonoBehaviour
 
         return result;
     }
+    #endregion
 
-    private void OnDrawGizmos()
+    #region Movement object
+    private IEnumerator StartMove()
     {
-        List<Vector3> curvePositions = GetCurveNodes();
+        int posId = 0;
+        List<Vector3> path = GetCurveNodes();
 
-        for (int i = 1; i < curvePositions.Count; i++)
+        while (_loopMove || posId < path.Count - 1)
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(curvePositions[i - 1], curvePositions[i]);
-        }
+            if ((path[posId] - transform.position).sqrMagnitude < 0.01f)
+            {
+                if (_loopMove)
+                {
+                    if (posId < path.Count - 1)
+                        posId++;
+                    else
+                        posId = _realLoopNode;
+                }
+                else
+                {
+                    if (posId < path.Count - 1)
+                        posId++;
+                }
+            }
 
-        for (int i = 1; i < _nodes.Count; i++)
-        {
-            Color gizmoColor = Color.yellow;
-            gizmoColor.a = 0.5f;
-            Gizmos.color = gizmoColor;
-            Gizmos.DrawLine(_nodes[i - 1], _nodes[i]);
+            transform.position = Vector3.MoveTowards(transform.position, path[posId], _speed * Time.deltaTime);
+            yield return null;
         }
     }
+    #endregion
 }

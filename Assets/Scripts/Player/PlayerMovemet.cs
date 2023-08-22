@@ -25,14 +25,10 @@ public class PlayerMovemet : MonoBehaviour
     private Vector3 _screenToWorld;
     #endregion
 
-    private void Awake()
+    private void Start()
     {
         _cam = Camera.main;
         _rb = GetComponent<Rigidbody>();
-    }
-
-    private void Start()
-    {
         _distance = (_cam.transform.position - transform.position).y;
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7383440194361355938}
   - component: {fileID: 7997941155852800364}
   - component: {fileID: 7579457610074499182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Bullet
   m_TagString: Enemy bullet
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8733039165651432339}
   - component: {fileID: 3677785703396284211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5867022202584857835}
   - component: {fileID: 2655389721159355424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

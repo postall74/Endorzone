@@ -5,12 +5,22 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     #region Components
-    private Rigidbody _rb;
+    protected Rigidbody _rb;
     #endregion
 
     #region Fields
-    [SerializeField] private float speed;
+    [Header("Параметры")]
+    [SerializeField] private float _speed = 1f;
     #endregion
+
+    #region Properties
+    public float Speed => _speed;
+    #endregion
+
+    public void SetSpeedBullet(float speed)
+    {
+        _speed = speed;
+    }
 
     private void Awake()
     {
@@ -19,6 +29,6 @@ public class BulletMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.velocity = transform.forward * speed;
+        _rb.velocity = transform.forward * _speed;
     }
 }

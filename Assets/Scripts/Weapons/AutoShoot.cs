@@ -43,17 +43,14 @@ public class AutoShoot : MonoBehaviour
         {
             float angle = 0f;
 
-            if (_shootProfiles.Amount > 1)
+            for (int i = 0; i < _shootProfiles.Amount; i++)
             {
-                for (int i = 0; i < _shootProfiles.Amount; i++)
-                {
-                    angle = _totalSpread * (i / (float)_shootProfiles.Amount);
-                    angle -= (_totalSpread / 2f) - (_shootProfiles.Spread / _shootProfiles.Amount);
-                    Shoot(angle);
+                angle = _totalSpread * (i / (float)_shootProfiles.Amount);
+                angle -= (_totalSpread / 2f) - (_shootProfiles.Spread / _shootProfiles.Amount);
+                Shoot(angle);
 
-                    if (_shootProfiles.FireRate > 0f)
-                        yield return _rate;
-                }
+                if (_shootProfiles.FireRate > 0f)
+                    yield return _rate;
             }
 
             yield return _interval;
@@ -65,5 +62,6 @@ public class AutoShoot : MonoBehaviour
         GameObject temp = PoolingManager.Instance.UseObject(_bulletPrefabs, _firePoint.position, _firePoint.rotation);
         temp.name = _shootProfiles.Damage.ToString();
         temp.transform.Rotate(Vector3.up, angle);
+        temp.GetComponent<BulletMove>().SetSpeedBullet(_shootProfiles.Speed);
     }
 }

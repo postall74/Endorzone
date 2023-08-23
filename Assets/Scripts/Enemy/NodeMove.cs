@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NodeMove : MonoBehaviour
@@ -13,9 +14,12 @@ public class NodeMove : MonoBehaviour
     [SerializeField] private List<Vector3> _nodes = new();
     [Space]
     [Header("Параметры перемещения")]
+    [Range(0f, 10f)]
     [SerializeField] private float _speed = 5f;
     [Header("Параметры поворота и крена")]
+    [Range(0f, 5f)]
     [SerializeField] private float _rotateSpeed = 2f;
+    [Range(0f, 10f)]
     [SerializeField] private float _bankValue = 5f;
     [SerializeField] private bool _isRotate;
     [Header("Параметры движения по кругу")]
@@ -24,6 +28,7 @@ public class NodeMove : MonoBehaviour
     [Space]
     private int _realLoopNode;
     private float _nextAngleGrab;
+    private float oldAngle = 0f;
     private Quaternion _rotation;
     private Transform _parent;
     #endregion
@@ -34,6 +39,7 @@ public class NodeMove : MonoBehaviour
 
     private void OnEnable()
     {
+        _parent = GetParentTransformPosition();
         StartCoroutine(StartMove());
         GetParentTransformPosition();
     }
@@ -81,6 +87,7 @@ public class NodeMove : MonoBehaviour
     {
         GetParentTransformPosition();
         List<Vector3> curvedNodes = new();
+        curvedNodes.Capacity = (_nodes.Count - 3) * CURVE_SEGMENT + 2;
         curvedNodes.Add(_parent.InverseTransformPoint(transform.position));
 
         for (int i = 0; i < _nodes.Count - 3; i += 3)
@@ -104,7 +111,7 @@ public class NodeMove : MonoBehaviour
         }
 
         _realLoopNode = (int)(curvedNodes.Count * (_loopToNode / (float)_nodes.Count));
-        
+
         return curvedNodes;
     }
 
@@ -121,10 +128,28 @@ public class NodeMove : MonoBehaviour
     #endregion
 
     #region Methods Movement object
+    private void UpdatePosition(Vector3 targetPosition)
+    {
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, targetPosition, _speed * Time.deltaTime);
+    }
+
+    private void UpdateRotation(Vector3 targetDirection)
+    {
+        if (targetDirection.sqrMagnitude > 0.01f)
+        {
+            _rotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+            float zBank = Mathf.Clamp(_rotation.eulerAngles.y - oldAngle, -10f, 10f);
+            Quaternion bank = Quaternion.Euler(0f, 0f, Mathf.Ceil(zBank) * _bankValue);
+            _rotation *= bank;
+            oldAngle = _rotation.eulerAngles.y;
+        }
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, _rotation, _rotateSpeed * Time.deltaTime);
+    }
+
     private IEnumerator StartMove()
     {
-        float oldAngle = 0f; 
-        int posId = 0;  
+        int posId = 0;
         List<Vector3> path = GetCurveNodes();
 
         while (_loopMove || posId < path.Count - 1)
@@ -145,25 +170,12 @@ public class NodeMove : MonoBehaviour
                 }
             }
 
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[posId], _speed * Time.deltaTime);
+            UpdatePosition(path[posId]);
 
             if (_isRotate)
             {
-                if (Time.time > _nextAngleGrab)
-                {
-                    _nextAngleGrab = Time.time + 0.5f;
-                    Vector3 direction = path[posId] - transform.localPosition;
-
-                    if (direction.sqrMagnitude > 0.01f)
-                        _rotation = Quaternion.LookRotation(direction, Vector3.up);
-
-                    float zBank = Mathf.Clamp(_rotation.eulerAngles.y - oldAngle, -10f, 10f);
-                    Quaternion bank = Quaternion.Euler(0f, 0f, Mathf.Ceil(zBank) * _bankValue);
-                    _rotation *= bank;
-                    oldAngle = _rotation.eulerAngles.y;
-                }
-
-                transform.rotation = Quaternion.Slerp(transform.rotation, _rotation, _rotateSpeed * Time.deltaTime);
+                Vector3 targetDirection = path[posId] - transform.localPosition;
+                UpdateRotation(targetDirection);
             }
 
             yield return null;

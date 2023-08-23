@@ -110,20 +110,12 @@ public class NodeMove : MonoBehaviour
 
     private Vector3 CalculateBezierPath(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
-        //((1-t)*(1-t)*(1-t)) * p0 + 3*t * ((1-t)*(1-t)) * p1 + ((3*t) + (3*t)) * (1-t) * p2 + (t*t*t) * p3
-
         float oneMinusT = 1f - t;
 
         Vector3 result = Mathf.Pow(oneMinusT, 3f) * p0 +
                          3f * Mathf.Pow(oneMinusT, 2f) * t * p1 +
                          3f * oneMinusT * (t * t) * p2 +
                          Mathf.Pow(t, 3f) * p3;
-            
-                       /**Mathf.Pow(oneMinusT, 3f) * p0 +
-                         (3 * t) * Mathf.Pow(oneMinusT, 2f) * p1 +
-                         Mathf.Pow(3 * t, 2f) * oneMinusT * p2 +
-                         Mathf.Pow(t, 3f) * p3;*/
-
         return result;
     }
     #endregion

@@ -8,7 +8,7 @@ public class HealthSystem : MonoBehaviour
     #endregion
 
     #region Components
-    [Header("Коомпоненты")]
+    [Header("Компоненты")]
     [SerializeField] private GameObject _hitEffect;
     [SerializeField] private GameObject _healthBar;
     #endregion

@@ -19,7 +19,7 @@ public class NodeMove : MonoBehaviour
     [Header("Параметры поворота и крена")]
     [Range(0f, 5f)]
     [SerializeField] private float _rotateSpeed = 2f;
-    [Range(0f, 10f)]
+    [Range(0f, 50f)]
     [SerializeField] private float _bankValue = 5f;
     [SerializeField] private bool _isRotate;
     [Header("Параметры движения по кругу")]
@@ -87,7 +87,10 @@ public class NodeMove : MonoBehaviour
     {
         GetParentTransformPosition();
         List<Vector3> curvedNodes = new();
-        curvedNodes.Capacity = (_nodes.Count - 3) * CURVE_SEGMENT + 2;
+        if (_nodes.Count > 4)
+            curvedNodes.Capacity = (_nodes.Count - 3) * CURVE_SEGMENT + 2;
+        else
+            curvedNodes.Capacity = 1;
         curvedNodes.Add(_parent.InverseTransformPoint(transform.position));
 
         for (int i = 0; i < _nodes.Count - 3; i += 3)

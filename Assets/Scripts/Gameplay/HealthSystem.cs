@@ -14,7 +14,7 @@ public class HealthSystem : MonoBehaviour
     #endregion
 
     #region Fields
-    private bool _isEnemy = true;
+    [SerializeField] private bool _isEnemy = true;
     private float _currentHealth;
     private string _tagName;
     private DeathSystem _deathScript;
@@ -70,6 +70,9 @@ public class HealthSystem : MonoBehaviour
     {
         if (_currentHealth <= 0f)
         {
+            if (_healthBar != null)
+                _healthBar.transform.parent.gameObject.SetActive(false);
+
             if (_deathScript != null)
                 _deathScript.Death();
         }

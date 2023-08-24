@@ -26,7 +26,8 @@ public class MissileMove : BulletMove
 
     private void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (GameObject.FindGameObjectWithTag("Player"))
+            _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnEnable()

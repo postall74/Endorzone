@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
     #region Fields
-    [Header("Параметры") ,Range(0f,10f)]
+    [Header("Параметры"), Range(0f, 10f)]
     [SerializeField] private float _rotateSpeed = 2f;
 
     private Vector3 _lookDirection;
@@ -14,7 +12,10 @@ public class LookAtPlayer : MonoBehaviour
 
     private void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerObject != null)
+            _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

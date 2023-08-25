@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletMove : MonoBehaviour
@@ -17,18 +15,9 @@ public class BulletMove : MonoBehaviour
     public float Speed => _speed;
     #endregion
 
-    public void SetSpeedBullet(float speed)
-    {
-        _speed = speed;
-    }
+    public void SetSpeedBullet(float speed) => _speed = speed;
 
-    private void Awake()
-    {
-        _rb = GetComponent<Rigidbody>();
-    }
+    private void Awake() => _rb = GetComponent<Rigidbody>();
 
-    private void FixedUpdate()
-    {
-        _rb.velocity = transform.forward * _speed;
-    }
+    private void FixedUpdate() => _rb.velocity = transform.forward * _speed;
 }

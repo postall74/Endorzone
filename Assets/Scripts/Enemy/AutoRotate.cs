@@ -29,14 +29,13 @@ public class AutoRotate : MonoBehaviour
 
     private void OnDisable()
     {
-        StopCoroutine(DoRotate());
+        StopAllCoroutines();
     }
 
     #region Methods Rotation objects
     private IEnumerator DoRotate()
     {
         Quaternion targetRotation = Quaternion.Euler(transform.localRotation.eulerAngles + _angleRotation);
-
 
         if (_isEndless)
         {

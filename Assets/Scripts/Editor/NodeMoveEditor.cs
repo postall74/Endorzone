@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(NodeMove))]
 public class NodeMoveEditor : Editor
@@ -14,22 +12,33 @@ public class NodeMoveEditor : Editor
     {
         _source = (NodeMove)target;
 
+        if (_source == null)
+        {
+            Debug.LogError("NodeMove component is missing.");
+            return;
+        }
+
         base.OnInspectorGUI();
 
         if (GUILayout.Button("Add nodes"))
-        {
             _source.Nodes.Add(_source.transform.position);
-        }
 
         if (GUILayout.Button("Remove nodes"))
         {
-            _source.Nodes.RemoveAt(_source.Nodes.Count - 1);
+            if (_source.Nodes.Count > 0)
+                _source.Nodes.RemoveAt(_source.Nodes.Count - 1);
         }
     }
 
     private void OnSceneGUI()
     {
         _source = (NodeMove)target;
+
+        if (_source == null)
+        {
+            Debug.LogError("NodeMove component is missing.");
+            return;
+        }
 
         for (int i = 0; i < _source.Nodes.Count; i++)
         {

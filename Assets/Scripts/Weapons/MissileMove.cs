@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MissileMove : BulletMove
@@ -26,7 +25,9 @@ public class MissileMove : BulletMove
 
     private void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Player"))
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerObject != null)
             _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -37,7 +38,7 @@ public class MissileMove : BulletMove
 
     private void OnDisable()
     {
-        StopCoroutine(StartFollow(_followDuration));
+        StopAllCoroutines();
     }
 
     #region Methods Rotate to player

@@ -9,17 +9,21 @@ public class HealthSystem : MonoBehaviour
 
     #region Components
     [Header("Компоненты")]
-    [SerializeField] private GameObject _hitEffect;
-    [SerializeField] private GameObject _healthBar;
+    [SerializeField, Tooltip("Эффект попадания")] 
+    private GameObject _hitEffect;
+    [SerializeField, Tooltip("Полоска здоровья")] 
+    private GameObject _healthBar;
     #endregion
 
     #region Fields
-    [SerializeField] private bool _isEnemy = true;
+    [SerializeField, Tooltip("Является противником")] 
+    private bool _isEnemy = true;
     private float _currentHealth;
     private string _tagName;
     private DeathSystem _deathScript;
     [Header("Значения")]
-    [SerializeField] private float _maxHealth = 10f;
+    [SerializeField, Range(1, 100), Tooltip("Максимальное здоровье")] 
+    private float _maxHealth = 10f;
     #endregion
 
     #region Properties
@@ -35,16 +39,13 @@ public class HealthSystem : MonoBehaviour
 
     private void Start()
     {
-        _deathScript = GetComponent<DeathSystem>();
+        if (TryGetComponent(out DeathSystem deathSystem))
+            _deathScript = deathSystem;
     }
 
     private void OnEnable()
     {
-        if (_isEnemy)
-            _tagName = _bullet;
-        else
-            _tagName = _enemyBullet;
-
+        _tagName = _isEnemy ? _bullet : _enemyBullet;
         _currentHealth = _maxHealth;
     }
 
@@ -70,11 +71,8 @@ public class HealthSystem : MonoBehaviour
     {
         if (_currentHealth <= 0f)
         {
-            if (_healthBar != null)
-                _healthBar.transform.parent.gameObject.SetActive(false);
-
-            if (_deathScript != null)
-                _deathScript.Death();
+            _healthBar?.transform.parent.gameObject.SetActive(false);
+            _deathScript?.Death();
         }
     }
 

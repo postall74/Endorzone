@@ -66,14 +66,12 @@ public class EnemyWaves : MonoBehaviour
         yield return _disableAfter;
 
         if (obj != null)
-        {
             obj.SetActive(false);
-        }
     }
 
     private IEnumerator CheckCombo()
     {
-        yield return new WaitForSeconds(transform.childCount);
+        yield return new WaitForSeconds(_numWaves * _intervalBetweenEnemy);
 
         if (transform.childCount == 0)
             Debug.Log("Enemy combo kill");

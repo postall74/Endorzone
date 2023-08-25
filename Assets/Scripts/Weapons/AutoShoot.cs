@@ -1,14 +1,13 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AutoShoot : MonoBehaviour
 {
-
     #region Components
     [SerializeField] private ShootProfiles _shootProfiles;
     [SerializeField] private GameObject _bulletPrefabs;
-    [SerializeField] private Transform _firePoint;
+    [SerializeField, Tooltip("Точка выстрела")] 
+    private Transform _firePoint;
     #endregion
 
     #region Fields
@@ -19,6 +18,12 @@ public class AutoShoot : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_shootProfiles == null)
+        {
+            Debug.Log("ShootProfiles is not assigned.");
+            return;
+        }
+
         _interval = new WaitForSeconds(_shootProfiles.Interval);
         _rate = new WaitForSeconds(_shootProfiles.FireRate);
 
@@ -59,6 +64,12 @@ public class AutoShoot : MonoBehaviour
 
     private void Shoot(float angle)
     {
+        if (_bulletPrefabs == null)
+        {
+            Debug.Log("Bullet prefab is not assigned.");
+            return;
+        }
+
         GameObject temp = PoolingManager.Instance.UseObject(_bulletPrefabs, _firePoint.position, _firePoint.rotation);
         temp.name = _shootProfiles.Damage.ToString();
         temp.transform.Rotate(Vector3.up, angle);

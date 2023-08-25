@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,9 +8,11 @@ public class AutoMove : MonoBehaviour
     [Header("Параметры")]
     [SerializeField] private Vector3 _moveOffset;
     [SerializeField] private float _duration;
+
     [Header("Логические параметры")]
     [SerializeField] private bool _onStart;
     [SerializeField] private bool _isReverse;
+
     [Header("События начала и окончания движения")]
     [SerializeField] private UnityEvent _onStartMove;
     [SerializeField] private UnityEvent _OnMoveDone;
@@ -27,9 +28,7 @@ public class AutoMove : MonoBehaviour
         _moveDistance = _moveOffset.magnitude;
 
         if (_onStart)
-        {
             Move(_isReverse);
-        }
     }
 
     #region Methods moving
@@ -40,20 +39,16 @@ public class AutoMove : MonoBehaviour
 
     private IEnumerator StartMove(bool reverse, float time)
     {
+        _targetPosition = reverse ? _initialPosition : _initialPosition + _moveOffset;
+
         if (reverse)
-        {
-            _targetPosition = _initialPosition;
             transform.localPosition += _moveOffset;
-        }
-        else
-            _targetPosition = transform.localPosition + _moveOffset;
 
         _onStartMove.Invoke();
 
-        while(transform.localPosition != _targetPosition)
+        while (transform.localPosition != _targetPosition)
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, _targetPosition, (_moveDistance / time) * Time.deltaTime);
-
             yield return null;
         }
 

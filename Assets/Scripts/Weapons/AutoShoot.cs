@@ -70,9 +70,12 @@ public class AutoShoot : MonoBehaviour
             return;
         }
 
-        GameObject temp = PoolingManager.Instance.UseObject(_bulletPrefabs, _firePoint.position, _firePoint.rotation);
+        Quaternion bulletRotation = Quaternion.Euler(_firePoint.eulerAngles.x, _firePoint.eulerAngles.y, 0f);
+
+        GameObject temp = PoolingManager.Instance.UseObject(_bulletPrefabs, _firePoint.position, bulletRotation);
         temp.name = _shootProfiles.Damage.ToString();
         temp.transform.Rotate(Vector3.up, angle);
         temp.GetComponent<BulletMove>().SetSpeedBullet(_shootProfiles.Speed);
+        PoolingManager.Instance.ReturnObject(temp, _shootProfiles.DestroyRate);
     }
 }

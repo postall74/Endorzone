@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 819929972019852331}
   - component: {fileID: 1963834121140193705}
   - component: {fileID: 8717185010513861516}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Base Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 9150158585252375771}
   - component: {fileID: 5710526526248525987}
   - component: {fileID: 1441450021538605767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret Shooter (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7383181585445085621}
   - component: {fileID: 9167340821815837558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet Shooter Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 1936547221576673543}
   - component: {fileID: 7783603476620941602}
   - component: {fileID: 990175239553589059}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,13 +306,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6224427495930982191}
   - component: {fileID: 404905745898584116}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6224427495930982191
 Transform:
   m_ObjectHideFlags: 0
@@ -359,7 +359,8 @@ GameObject:
   - component: {fileID: 4591721328676994608}
   - component: {fileID: 5258431402295725563}
   - component: {fileID: 8558940605193524788}
-  m_Layer: 0
+  - component: {fileID: 8284417968417421030}
+  m_Layer: 7
   m_Name: Turret_Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +414,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8011296593637100879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6207ff5b756619469caa3877ccffe54, type: 3}
   m_Name: 
@@ -436,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnObjects:
   - {fileID: 8558940605193524788}
-  _isDestroy: 1
+  _isDestroy: 0
   _delayDestroy: 0
   _onDeathEvent:
     m_PersistentCalls:
@@ -452,6 +453,42 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 404905745898584116}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1919854444065217275}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8593854911184204694}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8558940605193524788
 MonoBehaviour:
@@ -469,6 +506,60 @@ MonoBehaviour:
   _createAmount: 1
   _isAutoDestroy: 1
   _timeToDestroy: 2.5
+--- !u!114 &8284417968417421030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011296593637100879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5247d9d9167a6b408ff5e6eba49d8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterScreen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4591721328676994608}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5030561703593585445}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onExitScreen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5030561703593585445}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8593854911184204694
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5232784596722590027}
   - component: {fileID: 3057354127226690681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet Shooter Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +618,7 @@ GameObject:
   - component: {fileID: 4497725923452697469}
   - component: {fileID: 1735538266869259776}
   - component: {fileID: 2690245151350149426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret Upperbody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,8 +703,20 @@ PrefabInstance:
       value: Flame Smoke
       objectReference: {fileID: 0}
     - target: {fileID: 1080027328963350, guid: 86b9acd04c0ea6045be5a0324bcc097d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080027328963350, guid: 86b9acd04c0ea6045be5a0324bcc097d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412548890369718, guid: 86b9acd04c0ea6045be5a0324bcc097d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811654646685598, guid: 86b9acd04c0ea6045be5a0324bcc097d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4401406031847498, guid: 86b9acd04c0ea6045be5a0324bcc097d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -758,13 +861,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3245953172506540539, guid: 4ecc1ad5d59e51f469abec0c043b1b52, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3459074398698878605, guid: 4ecc1ad5d59e51f469abec0c043b1b52, type: 3}
       propertyPath: m_Name
       value: Health Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 3459074398698878605, guid: 4ecc1ad5d59e51f469abec0c043b1b52, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459074398698878605, guid: 4ecc1ad5d59e51f469abec0c043b1b52, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402234776080382214, guid: 4ecc1ad5d59e51f469abec0c043b1b52, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

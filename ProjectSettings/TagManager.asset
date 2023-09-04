@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Bullet
   - Enemy bullet
+  - Activator
+  - Deactivator
   layers:
   - Default
   - TransparentFX

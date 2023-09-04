@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18332621, g: 0.22894946, b: 0.30622128, a: 1}
+  m_IndirectSpecularColor: {r: 0.18158893, g: 0.22723702, b: 0.30741253, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -141,7 +141,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9971573
 Transform:
@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.233009
@@ -277,6 +281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5580087
@@ -333,6 +341,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -395,7 +407,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &56342709
 Transform:
@@ -478,7 +490,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &104703508
 Transform:
@@ -749,6 +761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.4419913
@@ -805,6 +821,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -872,7 +892,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &158555735
 Transform:
@@ -1023,7 +1043,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &208843036
 Transform:
@@ -1106,7 +1126,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &213174582
 Transform:
@@ -1190,6 +1210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.766999
@@ -1251,7 +1275,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &224559875
 Transform:
@@ -1400,7 +1424,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &236714309
 Transform:
@@ -1479,6 +1503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.4749737
@@ -1535,6 +1563,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1658,7 +1690,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &277879769
 Transform:
@@ -1737,6 +1769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.766999
@@ -1798,7 +1834,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &310937637
 Transform:
@@ -1881,7 +1917,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &322481631
 Transform:
@@ -1964,7 +2000,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &323048858
 Transform:
@@ -2067,6 +2103,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2187,6 +2227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.1999836
@@ -2241,7 +2285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 478638390}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2314,7 +2358,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &491032116
 Transform:
@@ -2477,7 +2521,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &523984669
 Transform:
@@ -2631,7 +2675,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &553298559
 Transform:
@@ -2714,7 +2758,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &564188446
 Transform:
@@ -2807,7 +2851,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &591712617
 Transform:
@@ -2890,7 +2934,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &595104713
 Transform:
@@ -3014,6 +3058,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28ecd3315daee4458f301acd05fe237, type: 3}
+--- !u!1 &604700227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604700229}
+  - component: {fileID: 604700228}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &604700228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604700227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e4c05d9bee7f74c8d56d7587a55945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveOffset: {x: 0, y: 0, z: 190}
+  _duration: 240
+  _onStart: 1
+  _isReverse: 0
+  _onStartMove:
+    m_PersistentCalls:
+      m_Calls: []
+  _OnMoveDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &604700229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604700227}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 963194228}
+  - {fileID: 1066894750}
+  - {fileID: 1414748584}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605370365
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3131,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &605370366
 Transform:
@@ -3113,7 +3214,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &611483444
 Transform:
@@ -3228,6 +3329,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3451,6 +3556,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3754,15 +3863,15 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8962264, g: 0.8555754, b: 0.612985, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.6698113, g: 0.51487887, b: 0.36966002, a: 1}
+  m_Intensity: 0.77
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
+    m_Type: 2
+    m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -3804,7 +3913,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 44
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
@@ -3813,13 +3922,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25450864, y: 0.4130202, z: -0.18474664, w: 0.8546978}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.5051065, y: 0.1959855, z: 0.26090717, w: -0.7989897}
+  m_LocalPosition: {x: 0, y: 9.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 35.991, y: 49.144, z: -7.497}
+  m_LocalEulerAnglesHint: {x: 44.82, y: 305.6, z: -60.1}
 --- !u!1 &709719029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,7 +3945,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &709719030
 Transform:
@@ -3919,7 +4028,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &715391342
 Transform:
@@ -3998,6 +4107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.233009
@@ -4059,7 +4172,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &721350105
 Transform:
@@ -4142,7 +4255,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &721753902
 Transform:
@@ -4225,7 +4338,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &732105310
 Transform:
@@ -4308,7 +4421,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &738956036
 Transform:
@@ -4396,7 +4509,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &786424626
 Transform:
@@ -4494,7 +4607,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &827946617
 Transform:
@@ -4572,6 +4685,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4696,7 +4813,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &870892476
 Transform:
@@ -4952,6 +5069,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Air Object Camera
   m_TagString: MainCamera
@@ -5024,10 +5142,18 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2033153576}
-  m_Father: {fileID: 1824962860}
+  m_Father: {fileID: 604700229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &963194229
 AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+--- !u!124 &963194230
+Behaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5055,7 +5181,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &979645305
 Transform:
@@ -5138,7 +5264,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &994524071
 Transform:
@@ -5221,7 +5347,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &999688286
 Transform:
@@ -5300,6 +5426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5250587
@@ -5361,7 +5491,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1009951087
 Transform:
@@ -5433,6 +5563,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
   m_PrefabInstance: {fileID: 1349108994}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066894749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066894750}
+  - component: {fileID: 1066894752}
+  - component: {fileID: 1066894751}
+  m_Layer: 0
+  m_Name: Activator
+  m_TagString: Activator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1066894750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066894749}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 604700229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1066894751
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066894749}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1066894752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066894749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15, y: 5, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1071005961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5444,6 +5655,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5626,7 +5841,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1093419098
 Transform:
@@ -5854,6 +6069,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5224255973439246598, guid: 4ecc1ad5d59e51f469abec0c043b1b52, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 183
+      objectReference: {fileID: 0}
     - target: {fileID: 7402234776080382214, guid: 4ecc1ad5d59e51f469abec0c043b1b52, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -5874,6 +6093,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5937,6 +6160,7 @@ GameObject:
   - component: {fileID: 1143283369}
   - component: {fileID: 1143283368}
   - component: {fileID: 1143283371}
+  - component: {fileID: 1143283376}
   - component: {fileID: 1143283372}
   - component: {fileID: 1143283375}
   - component: {fileID: 1143283374}
@@ -5969,11 +6193,11 @@ Rigidbody:
     serializedVersion: 2
     m_Bits: 0
   m_ImplicitCom: 1
-  m_ImplicitTensor: 1
+  m_ImplicitTensor: 0
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!65 &1143283369
 BoxCollider:
@@ -6012,7 +6236,7 @@ Transform:
   - {fileID: 618769910}
   - {fileID: 1363455095}
   - {fileID: 145403460}
-  m_Father: {fileID: 1824962860}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1143283371
 MonoBehaviour:
@@ -6029,7 +6253,6 @@ MonoBehaviour:
   _cam: {fileID: 963194227}
   _visualChildModel: {fileID: 618769910}
   _speed: 5
-  _bankValue: 180
 --- !u!114 &1143283372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6096,6 +6319,19 @@ MonoBehaviour:
   _healthBar: {fileID: 1726271313}
   _isEnemy: 0
   _maxHealth: 75
+--- !u!114 &1143283376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143283367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361e868945afc67449cf2e18be4ee5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bankValue: 180
 --- !u!1001 &1146689487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6107,6 +6343,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6276,7 +6516,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1184284478
 Transform:
@@ -6485,7 +6725,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1208793156
 Transform:
@@ -6568,7 +6808,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1225926127
 Transform:
@@ -6656,7 +6896,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1261491984
 Transform:
@@ -6735,6 +6975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5580087
@@ -6797,6 +7041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5580087
@@ -6858,7 +7106,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1332425702
 Transform:
@@ -6946,6 +7194,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7040,6 +7292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.8000555
@@ -7125,6 +7381,87 @@ Transform:
   - {fileID: 918665991}
   m_Father: {fileID: 1175807476}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1414748583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1414748584}
+  - component: {fileID: 1414748586}
+  - component: {fileID: 1414748585}
+  m_Layer: 0
+  m_Name: Deactivator
+  m_TagString: Deactivator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1414748584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414748583}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 604700229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1414748585
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414748583}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1414748586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414748583}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15, y: 5, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1452815908
 GameObject:
   m_ObjectHideFlags: 0
@@ -7141,7 +7478,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1452815909
 Transform:
@@ -7224,7 +7561,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1455695121
 Transform:
@@ -7421,7 +7758,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1492983929
 Transform:
@@ -7685,7 +8022,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1576183817
 Transform:
@@ -7977,7 +8314,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1663060671
 Transform:
@@ -8060,7 +8397,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1663192954
 Transform:
@@ -8138,6 +8475,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8332,7 +8673,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1710690225
 Transform:
@@ -8477,6 +8818,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.7670193
@@ -8538,7 +8883,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1749294889
 Transform:
@@ -8621,7 +8966,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1802733935
 Transform:
@@ -8704,7 +9049,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1811661171
 Transform:
@@ -8787,7 +9132,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1818623794
 Transform:
@@ -8854,62 +9199,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818623793}
   m_Mesh: {fileID: 4300000, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
---- !u!1 &1824962858
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1824962860}
-  - component: {fileID: 1824962859}
-  m_Layer: 0
-  m_Name: World Mover
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1824962859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824962858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7e4c05d9bee7f74c8d56d7587a55945, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveOffset: {x: 0, y: 0, z: 190}
-  _duration: 120
-  _onStart: 1
-  _isReverse: 0
-  _onStartMove:
-    m_PersistentCalls:
-      m_Calls: []
-  _OnMoveDone:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &1824962860
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824962858}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 963194228}
-  - {fileID: 1143283370}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1847948170
 GameObject:
   m_ObjectHideFlags: 0
@@ -8926,7 +9215,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1847948171
 Transform:
@@ -9065,6 +9354,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_Name
       value: CoconutTree (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9212,7 +9505,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1866549172
 Transform:
@@ -9366,7 +9659,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1925787356
 Transform:
@@ -9449,7 +9742,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1929963632
 Transform:
@@ -9533,6 +9826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.525008
@@ -9599,7 +9896,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1990370251
 Transform:
@@ -9680,7 +9977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
       propertyPath: m_Layer
@@ -9688,7 +9985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
       propertyPath: m_Name
@@ -9699,8 +9996,12 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d360b9c2c50841a48bd9f8ae949459c0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10013,7 +10314,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2005106387
 Transform:
@@ -10097,6 +10398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.232986
@@ -10167,7 +10472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033153575}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10241,7 +10546,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2060723681
 Transform:
@@ -10320,6 +10625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5580087
@@ -10386,7 +10695,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2084267446
 Transform:
@@ -10475,6 +10784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoconutTree (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea267a72efe99694f878b7faaa2ef5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.4419913
@@ -10558,7 +10871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6786691673001106821, guid: b2473c814be266142bebd4e6ee71441a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.25
+      value: 21.5
       objectReference: {fileID: 0}
     - target: {fileID: 6786691673001106821, guid: b2473c814be266142bebd4e6ee71441a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10702,12 +11015,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4973472963618630953, guid: 9ecb63ca65eb93a41854a93c5633814d, type: 3}
+      propertyPath: _onLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233375314985650118, guid: 9ecb63ca65eb93a41854a93c5633814d, type: 3}
+      propertyPath: _onLocal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6458428427569892948, guid: 9ecb63ca65eb93a41854a93c5633814d, type: 3}
       propertyPath: m_Name
       value: BossShip
       objectReference: {fileID: 0}
     - target: {fileID: 6458428427569892948, guid: 9ecb63ca65eb93a41854a93c5633814d, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226021402695711243, guid: 9ecb63ca65eb93a41854a93c5633814d, type: 3}
+      propertyPath: _onLocal
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10839,4 +11164,5 @@ SceneRoots:
   - {fileID: 5793800658430938357}
   - {fileID: 187468616}
   - {fileID: 1175807476}
-  - {fileID: 1824962860}
+  - {fileID: 604700229}
+  - {fileID: 1143283370}

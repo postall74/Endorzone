@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -16,11 +13,11 @@ public class PlayerMovemet : MonoBehaviour
     #region Fields
     [Header("Основные параметры")]
     [SerializeField] private float _speed = 5f;
-    [SerializeField] private float _bankValue = 180f;
+    //[SerializeField] private float _bankValue = 180f;
     private float _distance;
     private Vector3 _velocity;
     private Vector3 _lastPosition;
-    private Vector3 _rotation;
+    //private Vector3 _rotation;
     private Vector3 _touchPosition;
     private Vector3 _screenToWorld;
     #endregion
@@ -51,7 +48,7 @@ public class PlayerMovemet : MonoBehaviour
         Vector3 movement = Vector3.Lerp(transform.position, _screenToWorld, _speed * Time.fixedDeltaTime);
         _rb.MovePosition(movement);
 
-        _rotation.z = -_velocity.x * _bankValue;
-        _rb.MoveRotation(Quaternion.Euler(_rotation));
+        //_rotation.z = -_velocity.x * _bankValue;
+        //_rb.MoveRotation(Quaternion.Euler(_rotation));
     }
 }

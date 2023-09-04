@@ -22,7 +22,7 @@ public class AutoMove : MonoBehaviour
     private float _moveDistance;
     #endregion
 
-    private void Start()
+    private void Awake()
     {
         _initialPosition = transform.localPosition;
         _moveDistance = _moveOffset.magnitude;
@@ -39,10 +39,13 @@ public class AutoMove : MonoBehaviour
 
     private IEnumerator StartMove(bool reverse, float time)
     {
-        _targetPosition = reverse ? _initialPosition : _initialPosition + _moveOffset;
-
         if (reverse)
+        {
+            _targetPosition = _initialPosition;
             transform.localPosition += _moveOffset;
+        }
+        else
+            _targetPosition = _initialPosition + _moveOffset;
 
         _onStartMove.Invoke();
 

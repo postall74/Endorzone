@@ -3,8 +3,8 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     #region Constants
-    private const string _bullet = "Bullet";
-    private const string _enemyBullet = "Enemy bullet";
+    private const string Bullet = "Bullet";
+    private const string EnemyBullet = "Enemy bullet";
     #endregion
 
     #region Components
@@ -19,7 +19,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField, Tooltip("Является противником")] 
     private bool _isEnemy = true;
     private float _currentHealth;
-    private string _tagName;
+    private string _tagName = EnemyBullet;
     private DeathSystem _deathScript;
     [Header("Значения")]
     [SerializeField, Range(1, 100), Tooltip("Максимальное здоровье")] 
@@ -45,7 +45,7 @@ public class HealthSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        _tagName = _isEnemy ? _bullet : _enemyBullet;
+        _tagName = _isEnemy ? Bullet : EnemyBullet;
         _currentHealth = _maxHealth;
     }
 

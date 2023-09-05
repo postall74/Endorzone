@@ -9,6 +9,7 @@ TagManager:
   - Enemy bullet
   - Activator
   - Deactivator
+  - Coin
   layers:
   - Default
   - TransparentFX

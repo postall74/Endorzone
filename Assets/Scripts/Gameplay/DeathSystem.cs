@@ -11,7 +11,7 @@ public class DeathSystem : MonoBehaviour
 
     #region Fields
     [Header("Значения")]
-    [SerializeField] private bool _isDestroy = true;
+    [SerializeField] private bool _isDestroy = false;
     [SerializeField] private float _delayDestroy;
     [SerializeField] private UnityEvent _onDeathEvent;
     #endregion

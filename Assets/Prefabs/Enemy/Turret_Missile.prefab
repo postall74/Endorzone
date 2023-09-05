@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 1239606252545391280}
   - component: {fileID: 9098487404611001040}
   - component: {fileID: 4554189085187342388}
+  - component: {fileID: 3282611574020589254}
   m_Layer: 7
   m_Name: Turret_Missile
   m_TagString: Untagged
@@ -483,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnObjects:
   - {fileID: 4554189085187342388}
+  - {fileID: 3282611574020589254}
   _isDestroy: 0
   _delayDestroy: 0
   _onDeathEvent:
@@ -552,6 +554,22 @@ MonoBehaviour:
   _createAmount: 1
   _isAutoDestroy: 1
   _timeToDestroy: 2.5
+--- !u!114 &3282611574020589254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430900225461897300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112bddca0bdf8b942a5bf2c7ac859b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToCreate: {fileID: 8306389039329199733, guid: af7139e03192ca94791ab8f241a4a613, type: 3}
+  _createAmount: 5
+  _isAutoDestroy: 0
+  _timeToDestroy: 0
 --- !u!1 &8177849713423934961
 GameObject:
   m_ObjectHideFlags: 0

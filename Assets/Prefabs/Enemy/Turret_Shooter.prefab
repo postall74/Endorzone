@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 4591721328676994608}
   - component: {fileID: 5258431402295725563}
   - component: {fileID: 8558940605193524788}
+  - component: {fileID: 6383561263878537743}
   - component: {fileID: 8284417968417421030}
   m_Layer: 7
   m_Name: Turret_Shooter
@@ -437,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnObjects:
   - {fileID: 8558940605193524788}
+  - {fileID: 6383561263878537743}
   _isDestroy: 0
   _delayDestroy: 0
   _onDeathEvent:
@@ -506,6 +508,22 @@ MonoBehaviour:
   _createAmount: 1
   _isAutoDestroy: 1
   _timeToDestroy: 2.5
+--- !u!114 &6383561263878537743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011296593637100879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112bddca0bdf8b942a5bf2c7ac859b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToCreate: {fileID: 8306389039329199733, guid: af7139e03192ca94791ab8f241a4a613, type: 3}
+  _createAmount: 5
+  _isAutoDestroy: 0
+  _timeToDestroy: 0
 --- !u!114 &8284417968417421030
 MonoBehaviour:
   m_ObjectHideFlags: 0

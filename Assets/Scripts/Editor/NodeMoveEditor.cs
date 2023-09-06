@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(NodeMove))]
 public class NodeMoveEditor : Editor
@@ -28,6 +29,8 @@ public class NodeMoveEditor : Editor
             if (_source.Nodes.Count > 0)
                 _source.Nodes.RemoveAt(_source.Nodes.Count - 1);
         }
+
+        Change(ref _source);
     }
 
     private void OnSceneGUI()
@@ -44,6 +47,17 @@ public class NodeMoveEditor : Editor
         {
             _source.Nodes[i] = Handles.PositionHandle(_source.Nodes[i], Quaternion.identity);
             Handles.Label(_source.Nodes[i], "Nodes " + (i + 1));
+        }
+
+        Change(ref _source);
+    }
+
+    private void Change(ref NodeMove source)
+    {
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(source);
+            EditorSceneManager.MarkSceneDirty(source.gameObject.scene);
         }
     }
 }

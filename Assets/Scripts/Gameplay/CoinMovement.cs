@@ -42,6 +42,6 @@ public class CoinMovement : MonoBehaviour
         }
 
         _rb.MovePosition(_target);
-        _rb.MoveRotation(Quaternion.Euler(_target));
+        //_rb.MoveRotation(Quaternion.Euler(_target));
     }
 }

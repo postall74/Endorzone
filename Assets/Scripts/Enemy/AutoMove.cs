@@ -31,6 +31,11 @@ public class AutoMove : MonoBehaviour
             Move(_isReverse);
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     #region Methods moving
     public void Move(bool reverse)
     {

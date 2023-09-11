@@ -12,12 +12,14 @@ public class DeathSystem : MonoBehaviour
     #region Fields
     [Header("Значения")]
     [SerializeField] private bool _isDestroy = false;
+    [SerializeField] private bool _isBackToPool = true;
     [SerializeField] private float _delayDestroy;
     [SerializeField] private UnityEvent _onDeathEvent;
     #endregion
 
     #region Properties
     public bool IsDestroy => _isDestroy;
+    public bool _IsBackToPool => _isBackToPool;
     public UnityEvent OnDeathEvent => _onDeathEvent;
     #endregion
 
@@ -32,7 +34,10 @@ public class DeathSystem : MonoBehaviour
 
         if (_isDestroy)
         {
-            PoolingManager.Instance.ReturnObject(gameObject, _delayDestroy);
+            if (_isBackToPool)
+                PoolingManager.Instance.ReturnObject(gameObject, _delayDestroy);
+            else
+                Destroy(gameObject, _delayDestroy);
         }
 
         for (int i = 0; i < _colliders.Length; i++)

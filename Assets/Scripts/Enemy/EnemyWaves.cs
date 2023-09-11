@@ -10,7 +10,7 @@ public class EnemyWaves : MonoBehaviour
     [SerializeField] private float _intervalBetweenEnemy = 0.5f;
     [SerializeField] private float _removeAfter = 2f;
     [Space, Header("Список объектов для создания волны")]
-    [SerializeField] private List<GameObject> _childs = new();
+    [SerializeField] private List<GameObject> _children = new();
 
     private GameObject _mainChild;
     private WaitForSeconds _interval;
@@ -36,14 +36,14 @@ public class EnemyWaves : MonoBehaviour
         _mainChild = transform.GetChild(0).gameObject;
         Vector3 position = _mainChild.transform.position;
         _mainChild.SetActive(false);
-        _childs.Add(_mainChild);
+        _children.Add(_mainChild);
 
         for (int i = 1; i < _numWaves; i++)
         {
             GameObject temp = Instantiate(_mainChild, position, _mainChild.transform.rotation);
-            _childs.Add(temp);
-            _childs[i].transform.SetParent(transform);
-            _childs[i].SetActive(false);
+            _children.Add(temp);
+            _children[i].transform.SetParent(transform);
+            _children[i].SetActive(false);
         }
     }
 
@@ -54,8 +54,8 @@ public class EnemyWaves : MonoBehaviour
 
         while (index < _numWaves)
         {
-            _childs[index].SetActive(true);
-            StartCoroutine(DisableChild(_childs[index]));
+            _children[index].SetActive(true);
+            StartCoroutine(DisableChild(_children[index]));
             index++;
             yield return _interval;
         }
@@ -71,7 +71,7 @@ public class EnemyWaves : MonoBehaviour
 
     private IEnumerator CheckCombo()
     {
-        yield return new WaitForSeconds(_numWaves * _intervalBetweenEnemy);
+        yield return _disableAfter;
 
         if (transform.childCount == 0)
             Debug.Log("Enemy combo kill");

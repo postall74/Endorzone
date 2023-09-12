@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 1873470894336708217}
   m_Layer: 7
   m_Name: Round_Turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,6 +404,7 @@ MonoBehaviour:
   - {fileID: 8568381793850941623}
   - {fileID: 2769496082182531382}
   _isDestroy: 0
+  _isBackToPool: 1
   _delayDestroy: 0
   _onDeathEvent:
     m_PersistentCalls:

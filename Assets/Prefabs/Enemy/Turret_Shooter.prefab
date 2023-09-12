@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 8284417968417421030}
   m_Layer: 7
   m_Name: Turret_Shooter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,6 +440,7 @@ MonoBehaviour:
   - {fileID: 8558940605193524788}
   - {fileID: 6383561263878537743}
   _isDestroy: 0
+  _isBackToPool: 1
   _delayDestroy: 0
   _onDeathEvent:
     m_PersistentCalls:

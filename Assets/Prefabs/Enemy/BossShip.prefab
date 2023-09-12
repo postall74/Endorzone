@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 3825343177904228307}
   m_Layer: 0
   m_Name: Second Turret - Missile
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1047,6 +1047,7 @@ MonoBehaviour:
   - {fileID: 3067798292207946745}
   - {fileID: 3078715305265053898}
   _isDestroy: 0
+  _isBackToPool: 1
   _delayDestroy: 0
   _onDeathEvent:
     m_PersistentCalls:
@@ -1099,6 +1100,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 6233375314985650118}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4973472963618630953}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6458428427569892948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,15 +1137,14 @@ GameObject:
   - component: {fileID: 2217912882405987812}
   - component: {fileID: 3308019611005575799}
   - component: {fileID: 7063555098379783457}
-  - component: {fileID: 7226021402695711243}
   - component: {fileID: 7715015067611008917}
   m_Layer: 0
   m_Name: BossShip
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2676545492311825220
 Transform:
   m_ObjectHideFlags: 0
@@ -1194,8 +1218,9 @@ MonoBehaviour:
   - {fileID: 2348927616768458040}
   - {fileID: 2084187447056544556}
   - {fileID: 3463189543574515245}
-  _isDestroy: 1
-  _delayDestroy: 7
+  _isDestroy: 0
+  _isBackToPool: 1
+  _delayDestroy: 0
   _onDeathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1211,9 +1236,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7226021402695711243}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 3937094065200489363}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1227,6 +1252,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2676545492311825220}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: DetachChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1252,40 +1289,6 @@ MonoBehaviour:
   _onStart: 0
   _angleRotation: {x: 0, y: 0, z: 20}
   _speed: 5
---- !u!114 &7226021402695711243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6458428427569892948}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7e4c05d9bee7f74c8d56d7587a55945, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveOffset: {x: -20, y: -250, z: 50}
-  _duration: 7.5
-  _onStart: 1
-  _isReverse: 0
-  _onStartMove:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3937094065200489363}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _OnMoveDone:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &7715015067611008917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,16 +1302,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nodes:
-  - {x: 0, y: 0, z: 5}
-  - {x: -9, y: 0, z: 0}
-  - {x: 9, y: 0, z: 0}
-  - {x: 0, y: 0, z: 2.999652}
+  - {x: 0, y: 0, z: 90}
+  - {x: -9, y: 0, z: 80}
+  - {x: 9, y: 0, z: 80}
+  - {x: 0, y: 0, z: 90}
   _speed: 2
   _rotateSpeed: 2
   _bankValue: 5
   _isRotate: 0
   _loopMove: 1
-  _loopToNode: 0
+  _loopToNode: 1
 --- !u!1 &6995847109041093506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1327,7 @@ GameObject:
   - component: {fileID: 6953064870781154294}
   m_Layer: 0
   m_Name: First Turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1421,6 +1424,7 @@ MonoBehaviour:
   - {fileID: 4121837353613515076}
   - {fileID: 2132164028977911852}
   _isDestroy: 0
+  _isBackToPool: 1
   _delayDestroy: 0
   _onDeathEvent:
     m_PersistentCalls:

@@ -5,6 +5,7 @@ public class HealthSystem : MonoBehaviour
     #region Constants
     private const string Bullet = "Bullet";
     private const string EnemyBullet = "Enemy bullet";
+    private const string Untagget = "Untagget";
     #endregion
 
     #region Components
@@ -81,6 +82,9 @@ public class HealthSystem : MonoBehaviour
         {
             _healthBar?.transform.parent.gameObject.SetActive(false);
             _deathScript?.Death();
+
+            if (_isEnemy)
+                gameObject.tag = Untagget;
         }
     }
 

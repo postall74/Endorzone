@@ -29,7 +29,7 @@ public class MegaBomb : MonoBehaviour
 
             if (health != null && coll.CompareTag("Enemy"))
             {
-                health.TakeDamage(_damage);
+                health.TakeDamage(_damage, coll);
                 Debug.Log(coll.name + " received bomb damage");
             }
         }

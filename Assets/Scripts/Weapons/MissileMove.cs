@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class MissileMove : BulletMove
 {
+    #region Constants
+    private const string Player = "Player";
+    private const string Enemy = "Enemy";
+    private const string EnemyBullet = "Enemy bullet";
+    #endregion
+
     #region Components
-    private Transform _player;
+    private Transform _target;
     #endregion
 
     #region Fileds
@@ -14,6 +20,7 @@ public class MissileMove : BulletMove
     [SerializeField] private float _rotateSpeed = 3f;
     [Range(2f, 15f)]
     [SerializeField] private float _followDuration = 5f;
+    [SerializeField] private bool _isPlayer = false;
     private WaitForSeconds _physicsTimeStep;
     #endregion
 
@@ -25,15 +32,27 @@ public class MissileMove : BulletMove
 
     private void Start()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (!_isPlayer)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag(Player);
 
-        if (playerObject != null)
-            _player = GameObject.FindGameObjectWithTag("Player").transform;
+            if (playerObject != null)
+                _target = FindTarget(Player);
+        }
+
     }
 
     private void OnEnable()
     {
         StartCoroutine(StartFollow(_followDuration));
+
+        if (_isPlayer)
+        {
+            GameObject enemyObject = GameObject.FindGameObjectWithTag(Enemy);
+
+            if (enemyObject != null)
+                _target = FindTarget(Enemy);
+        }
     }
 
     private void OnDisable()
@@ -41,16 +60,34 @@ public class MissileMove : BulletMove
         StopAllCoroutines();
     }
 
-    #region Methods Rotate to player
+    #region Methods Rotate to targer
+    private Transform FindTarget(string targetName)
+    {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag(targetName);
+        Array.Sort(targets, delegate (GameObject a, GameObject b)
+        {
+            return Vector3.Distance(transform.position, a.transform.position).CompareTo(Vector3.Distance(transform.position, b.transform.position));
+        });
+
+#if UNITY_EDITOR
+        foreach (GameObject target in targets)
+        {
+            Debug.Log(Vector3.Distance(transform.position, target.transform.position));
+        }
+#endif
+
+        return targets[0].transform;
+    }
+
     private IEnumerator StartFollow(float followDuration)
     {
         while (followDuration > 0)
         {
             followDuration -= Time.fixedDeltaTime;
 
-            if (_player != null)
+            if (_target != null)
             {
-                Vector3 temp = _player.position - transform.position;
+                Vector3 temp = _target.position - transform.position;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(temp), _rotateSpeed * Time.fixedDeltaTime);
             }
 

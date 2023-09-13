@@ -30,11 +30,26 @@ public class HealthSystem : MonoBehaviour
     public bool IsEnemy => _isEnemy;
     #endregion
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, Collider other)
     {
+        //if (!_isEnemy)
+        //{
+        //    LevelManager.Instance.PlayerHit();
+        //}
+        CreateHitDamageFX(other);
         _currentHealth -= damage;
         CheckHealth();
         UpdateUI();
+    }
+
+    public void CreateHitDamageFX(Collider other)
+    {
+        Vector3 triggerPosition = other.ClosestPointOnBounds(transform.position);
+        Vector3 direction = triggerPosition - transform.position;
+
+        GameObject fx = PoolingManager.Instance.UseObject(_hitEffect, triggerPosition, Quaternion.LookRotation(direction));
+
+        PoolingManager.Instance.ReturnObject(fx, 1f);
     }
 
     private void Start()
@@ -53,15 +68,8 @@ public class HealthSystem : MonoBehaviour
     {
         if (other.CompareTag(_tagName))
         {
-            Vector3 triggerPosition = other.ClosestPointOnBounds(transform.position);
-            Vector3 direction = triggerPosition - transform.position;
-
-            GameObject fx = PoolingManager.Instance.UseObject(_hitEffect, triggerPosition, Quaternion.LookRotation(direction));
-
-            PoolingManager.Instance.ReturnObject(fx, 1f);
-
             float damage = float.Parse(other.name);
-            TakeDamage(damage);
+            TakeDamage(damage, other);
 
             PoolingManager.Instance.ReturnObject(other.gameObject);
         }

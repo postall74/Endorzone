@@ -29,6 +29,16 @@ public class Shield : MonoBehaviour
         StartCoroutine(ShieldActivate());
     }
 
+    public void CreateHitDamageFX(Collider other)
+    {
+        Vector3 triggerPosition = other.ClosestPointOnBounds(transform.position);
+        Vector3 direction = triggerPosition - transform.position;
+
+        GameObject fx = PoolingManager.Instance.UseObject(_hitEffect, triggerPosition, Quaternion.LookRotation(direction));
+
+        PoolingManager.Instance.ReturnObject(fx, 1f);
+    }
+
     private void Awake()
     {
         if (TryGetComponent(out Collider collider))
@@ -46,12 +56,7 @@ public class Shield : MonoBehaviour
     {
         if (other.CompareTag(Enemy) || other.CompareTag(EnemyBullet))
         {
-            Vector3 triggerPosition = other.ClosestPointOnBounds(transform.position);
-            Vector3 direction = triggerPosition - transform.position;
-
-            GameObject fx = PoolingManager.Instance.UseObject(_hitEffect, triggerPosition, Quaternion.LookRotation(direction));
-
-            PoolingManager.Instance.ReturnObject(fx, 1f);
+            CreateHitDamageFX(other);
 
             HealthSystem health = other.GetComponent<HealthSystem>();
 

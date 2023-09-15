@@ -69,12 +69,12 @@ public class MissileMove : BulletMove
             return Vector3.Distance(transform.position, a.transform.position).CompareTo(Vector3.Distance(transform.position, b.transform.position));
         });
 
-#if UNITY_EDITOR
-        foreach (GameObject target in targets)
-        {
-            Debug.Log(Vector3.Distance(transform.position, target.transform.position));
-        }
-#endif
+//#if UNITY_EDITOR
+//        foreach (GameObject target in targets)
+//        {
+//            Debug.Log(Vector3.Distance(transform.position, target.transform.position));
+//        }
+//#endif
 
         return targets[0].transform;
     }

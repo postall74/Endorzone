@@ -5,7 +5,7 @@ public class HealthSystem : MonoBehaviour
     #region Constants
     private const string Bullet = "Bullet";
     private const string EnemyBullet = "Enemy bullet";
-    private const string Untagget = "Untagget";
+    private const string Untagged = "Untagged";
     #endregion
 
     #region Components
@@ -22,9 +22,12 @@ public class HealthSystem : MonoBehaviour
     private float _currentHealth;
     private string _tagName = EnemyBullet;
     private DeathSystem _deathScript;
+    [SerializeField, Tooltip("Активирован ли противник")]
+    private bool _isActivated = false;
     [Header("Значения")]
     [SerializeField, Range(1, 100), Tooltip("Максимальное здоровье")] 
     private float _maxHealth = 10f;
+    private bool _isDead;
     #endregion
 
     #region Properties
@@ -33,10 +36,12 @@ public class HealthSystem : MonoBehaviour
 
     public void TakeDamage(float damage, Collider other)
     {
-        //if (!_isEnemy)
-        //{
-        //    LevelManager.Instance.PlayerHit();
-        //}
+        if (_isEnemy && !_isActivated)
+            return;
+
+        if (!_isEnemy)
+            LevelManager.instance.PlayerHit();
+
         CreateHitDamageFX(other);
         _currentHealth -= damage;
         CheckHealth();
@@ -53,8 +58,16 @@ public class HealthSystem : MonoBehaviour
         PoolingManager.Instance.ReturnObject(fx, 1f);
     }
 
+    public void Activation(bool beState)
+    {
+        _isActivated = beState;
+    }
+
     private void Start()
     {
+        if(_isEnemy)
+            LevelManager.instance.RegisterEnemy();
+
         if (TryGetComponent(out DeathSystem deathSystem))
             _deathScript = deathSystem;
     }
@@ -67,6 +80,9 @@ public class HealthSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_isEnemy && !_isActivated)
+            return;
+
         if (other.CompareTag(_tagName))
         {
             float damage = float.Parse(other.name);
@@ -83,8 +99,12 @@ public class HealthSystem : MonoBehaviour
             _healthBar?.transform.parent.gameObject.SetActive(false);
             _deathScript?.Death();
 
-            if (_isEnemy)
-                gameObject.tag = Untagget;
+            if (_isEnemy && !_isDead)
+            {
+                _isDead = true;
+                gameObject.tag = Untagged;
+                LevelManager.instance.AddEnemyKill(gameObject.name);
+            }
         }
     }
 

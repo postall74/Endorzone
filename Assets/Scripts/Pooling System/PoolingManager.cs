@@ -72,19 +72,19 @@ public class PoolingManager : MonoBehaviour
 
         for (int i = 0; i < _poolItems.Length; i++)
         {
-            GameObject uniquePool = new GameObject(_poolItems[i]._object.name + " Group");
+            GameObject uniquePool = new GameObject(_poolItems[i].Object.name + " Group");
             uniquePool.transform.SetParent(poolGroup.transform);
 
-            int objId = _poolItems[i]._object.GetInstanceID();
-            _poolItems[i]._object.SetActive(false);
+            int objId = _poolItems[i].Object.GetInstanceID();
+            _poolItems[i].Object.SetActive(false);
 
             _poolQueue.Add(objId, new Queue<GameObject>());
-            _growCapabilityBool.Add(objId, _poolItems[i]._isGrowCapability);
+            _growCapabilityBool.Add(objId, _poolItems[i].IsGrowCapability);
             _parents.Add(objId, uniquePool.transform);
 
-            for (int j = 0; j < _poolItems[i]._amount; j++)
+            for (int j = 0; j < _poolItems[i].Amount; j++)
             {
-                GameObject temp = Instantiate(_poolItems[i]._object, uniquePool.transform);
+                GameObject temp = Instantiate(_poolItems[i].Object, uniquePool.transform);
                 _poolQueue[objId].Enqueue(temp);
             }
         }
@@ -107,8 +107,14 @@ public class PoolingManager : MonoBehaviour
 public class PoolItem
 {
     #region Fields
-    public GameObject _object;
-    public int _amount;
-    public bool _isGrowCapability;
+    [SerializeField] private GameObject _object;
+    [SerializeField] private int _amount;
+    [SerializeField] private bool _isGrowCapability;
+    #endregion
+
+    #region Properties
+    public GameObject Object => _object;
+    public int Amount => _amount;
+    public bool IsGrowCapability => _isGrowCapability;
     #endregion
 }

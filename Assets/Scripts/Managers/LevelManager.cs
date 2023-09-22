@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {
 
     #region Fields
-    public static LevelManager instance;
+    public static LevelManager Instance;
 
     [SerializeField] private Medals _medals = new Medals();
 
@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
         _medals.SetUntouched(true);
     }
 

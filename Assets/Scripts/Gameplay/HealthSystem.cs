@@ -40,7 +40,7 @@ public class HealthSystem : MonoBehaviour
             return;
 
         if (!_isEnemy)
-            LevelManager.instance.PlayerHit();
+            LevelManager.Instance.PlayerHit();
 
         CreateHitDamageFX(other);
         _currentHealth -= damage;
@@ -66,7 +66,7 @@ public class HealthSystem : MonoBehaviour
     private void Start()
     {
         if(_isEnemy)
-            LevelManager.instance.RegisterEnemy();
+            LevelManager.Instance.RegisterEnemy();
 
         if (TryGetComponent(out DeathSystem deathSystem))
             _deathScript = deathSystem;
@@ -103,7 +103,7 @@ public class HealthSystem : MonoBehaviour
             {
                 _isDead = true;
                 gameObject.tag = Untagged;
-                LevelManager.instance.AddEnemyKill(gameObject.name);
+                LevelManager.Instance.AddEnemyKill(gameObject.name);
             }
         }
     }

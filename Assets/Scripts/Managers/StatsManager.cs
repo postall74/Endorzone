@@ -83,6 +83,32 @@ public class StatsManager : MonoBehaviour
         return null;
     }
 
+    public void SaveProgress()
+    {
+        SaveData saveData = new();
+
+        saveData.SetLives(_lives);
+        saveData.SetMoney(_money);
+        saveData.SetAchievementList(_achievementList);
+        saveData.SetStatsTimer(_statsTimer);
+        saveData.SetStats(_stats);
+
+        SaveSystem.Save(saveData);
+    }
+
+    public void LoadProgress()
+    {
+        SaveData loadData = SaveSystem.Load<SaveData>();
+
+        _lives = loadData.Lives;
+        _money = loadData.Money;
+        _achievementList = loadData.AchievementList;
+        _statsTimer = loadData.StatsTimer;
+        _stats = loadData.Stats;
+
+        UpdateItemDisplay();
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -93,6 +119,16 @@ public class StatsManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void UpdateItemDisplay()
+    {
+        UpgradeItem[] items = FindObjectsOfType<UpgradeItem>();
+
+        foreach (UpgradeItem item in items)
+        {
+            item.UpdateItemDisplay();
         }
     }
 }
@@ -169,5 +205,37 @@ public class LaserData
 
     #region Properties
     public float Duration => _duration;
+    #endregion
+}
+
+[System.Serializable]
+public class SaveData
+{
+    #region Fields
+    private int _lives;
+    private int _money;
+    private Dictionary<string, Medals> _achievementList = new Dictionary<string, Medals>();
+    private Dictionary<string, DateTime> _statsTimer = new Dictionary<string, DateTime>();
+    private List<StatsUpgradeInfo> _stats = new();
+    #endregion
+
+    #region Propertiers
+    public int Lives => _lives;
+    public int Money => _money;
+    public Dictionary<string, Medals> AchievementList => _achievementList;
+    public Dictionary<string, DateTime> StatsTimer => _statsTimer;
+    public List<StatsUpgradeInfo> Stats => _stats;
+    #endregion
+
+    #region Public Methods to SaveData
+    public void SetLives(int lives) => _lives = lives;
+
+    public void SetMoney(int money) => _money = money;
+
+    public void SetAchievementList(Dictionary<string, Medals> achievementList) => _achievementList = achievementList;
+
+    public void SetStatsTimer(Dictionary<string, DateTime> statsTimer) => _statsTimer = statsTimer;
+
+    public void SetStats(List<StatsUpgradeInfo> stats) => _stats = stats;
     #endregion
 }

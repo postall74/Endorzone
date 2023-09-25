@@ -14,7 +14,7 @@ public class DialogManager : MonoBehaviour
 
     #region Fields
     public static DialogManager Instance;
-    [Header("")]
+    [Header("Основные параметры")]
     [SerializeField] private Text _dialogMessage;
     [SerializeField] private Text _yesText;
     [SerializeField] private Text _noText;

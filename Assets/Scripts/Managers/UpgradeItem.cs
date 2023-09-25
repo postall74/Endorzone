@@ -47,7 +47,7 @@ public class UpgradeItem : MonoBehaviour
         }
         else
         {
-            //TO-DO: show message not enough money
+            //show message not enough money
             //Debug.Log("Not enough money");
             DialogManager.Instance.ShowMessage("You don't have enough money to upgrade " + _statsName);
         }
@@ -55,7 +55,32 @@ public class UpgradeItem : MonoBehaviour
 
     public void CheckUpgradeStatus()
     {
+        if (StatsManager.Instance.StatsTimer.ContainsKey(_statsName))
+        {
+            if (DateTime.Now < StatsManager.Instance.StatsTimer[_statsName])
+            {
+                StartCoroutine(DoUpgrade());
+            }
+            else
+            {
+                IncreaseStat();
+            }
+        }
+    }
 
+    public void UpdateItemDisplay()
+    {
+        _stats = StatsManager.Instance.GetStats(_statsName);
+        _itemLevelBar.value = _stats.Level;
+
+        if (_stats.Level == _pricesLevel.Length)
+        {
+            _itemByuText.text = "MAX";
+            return;
+        }
+
+        _itemByuText.text = _pricesLevel[_stats.Level].ToString();
+        CheckUpgradeStatus();
     }
 
     private void Start()
@@ -65,6 +90,7 @@ public class UpgradeItem : MonoBehaviour
         _itemByuText.text = _pricesLevel[_stats.Level].ToString();
         _itemLevelBar.value = _stats.Level;
         _buttonByu.onClick.AddListener(ByuUpgrade);
+        UpdateItemDisplay();
     }
 
     private IEnumerator DoUpgrade()
@@ -79,12 +105,8 @@ public class UpgradeItem : MonoBehaviour
             _itemByuText.text = string.Format("{0:00}:{1:00}", timeRemaining.Minutes, timeRemaining.Seconds);
             yield return null;
         }
-
-        //Debug.Log("Finish upgrading " + _statsName);
-        DialogManager.Instance.ShowMessage("Finish upgrading " + _statsName);
-
+        
         //do upgrade this
-
         _isUpgrading = false;
         IncreaseStat();
     }
@@ -102,5 +124,6 @@ public class UpgradeItem : MonoBehaviour
         _itemByuText.text = _pricesLevel[_stats.Level].ToString();
         _itemLevelBar.value = _stats.Level;
         StatsManager.Instance.StatsTimer.Remove(_statsName);
+        DialogManager.Instance.ShowMessage("Finish upgrading " + _statsName);
     }
 }

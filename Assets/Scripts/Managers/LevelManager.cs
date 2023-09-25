@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
     public void AddEnemyKill(string name)
     {
         _enemyKilled++;
-        Debug.Log(name + " is killed");
+        UnityEngine.Debug.Log(name + " is killed");
     }
 
     public void AddRescue()

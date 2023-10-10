@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Debug : MonoBehaviour
+public class DebugButton : MonoBehaviour
 {
     #region Constants
     #endregion

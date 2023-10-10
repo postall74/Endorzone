@@ -22,7 +22,7 @@ public static class SaveSystem
         FileStream file = new FileStream (Application.persistentDataPath + "/savegame.dat", FileMode.Create);
         bf.Serialize(file, saveData);
         file.Close();
-        UnityEngine.Debug.Log("save success!");
+        Debug.Log("save success!");
     }
 
     public static T Load<T>()
@@ -32,7 +32,7 @@ public static class SaveSystem
             BinaryFormatter bf = new BinaryFormatter ();
             FileStream file = new FileStream (Application.persistentDataPath + "/savegame.dat", FileMode.Open);
 
-            UnityEngine.Debug.Log("Load success!");
+            Debug.Log("Load success!");
 
             T loaded = (T)bf.Deserialize(file);
             file.Close();
@@ -40,7 +40,7 @@ public static class SaveSystem
         }
         else
         {
-            UnityEngine.Debug.Log("File not found!");
+            Debug.Log("File not found!");
         }
 
         return default(T);

@@ -20,7 +20,7 @@ public class AutoShoot : MonoBehaviour
     {
         if (_shootProfiles == null)
         {
-            UnityEngine.Debug.Log("ShootProfiles is not assigned.");
+            Debug.Log("ShootProfiles is not assigned.");
             return;
         }
 
@@ -66,7 +66,7 @@ public class AutoShoot : MonoBehaviour
     {
         if (_bulletPrefabs == null)
         {
-            UnityEngine.Debug.Log("Bullet prefab is not assigned.");
+            Debug.Log("Bullet prefab is not assigned.");
             return;
         }
 

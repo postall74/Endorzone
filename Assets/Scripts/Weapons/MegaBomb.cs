@@ -18,7 +18,7 @@ public class MegaBomb : MonoBehaviour
 
     public void DeployBomb()
     {
-        UnityEngine.Debug.Log("Bomb deployed");
+        Debug.Log("Bomb deployed");
         _bombFX.Play();
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, _radius);
@@ -30,7 +30,7 @@ public class MegaBomb : MonoBehaviour
             if (health != null && coll.CompareTag("Enemy"))
             {
                 health.TakeDamage(_damage, coll);
-                UnityEngine.Debug.Log(coll.name + " received bomb damage");
+                Debug.Log(coll.name + " received bomb damage");
             }
         }
     }

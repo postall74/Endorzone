@@ -74,9 +74,9 @@ public class EnemyWaves : MonoBehaviour
         yield return _disableAfter;
 
         if (transform.childCount == 0)
-            UnityEngine.Debug.Log("Enemy combo kill");
+            Debug.Log("Enemy combo kill");
         else
-            UnityEngine.Debug.Log("Chain lost");
+            Debug.Log("Chain lost");
     }
     #endregion
 }

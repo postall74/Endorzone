@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ScreenLoader : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
     #region Constants
     #endregion
@@ -17,7 +17,7 @@ public class ScreenLoader : MonoBehaviour
     #endregion
 
     #region Fields
-    public static ScreenLoader Instance;
+    public static SceneLoader Instance;
     [Header("Основные параметры")]
     [SerializeField] private Vector3 _barScale = Vector3.one;
     #endregion
@@ -28,37 +28,6 @@ public class ScreenLoader : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         StartCoroutine(AsyncChangeScene(sceneName));
-    }
-
-    public IEnumerator AsyncChangeScene(string name)
-    {
-        yield return null;
-
-        _loadText.text = "Loading";
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(name);
-        asyncOperation.allowSceneActivation = false;
-
-        Debug.Log("Pro :" + asyncOperation.progress);
-
-        while (!asyncOperation.isDone)
-        {
-            float progress = Mathf.Clamp01((float)asyncOperation.progress / 0.9f);
-            UpdateBar(progress);
-
-            if (Mathf.Approximately(asyncOperation.progress, 0.9f))
-            {
-                _loadText.text = "Tap to Start";
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    asyncOperation.allowSceneActivation = true;
-                }
-            }
-
-            yield return null;
-        }
-
-        DisablePanel();
     }
 
     private void Awake()
@@ -86,5 +55,36 @@ public class ScreenLoader : MonoBehaviour
         _panel.SetActive(true);
         _barScale.x = value;
         _progressBar.localScale = _barScale;
+    }
+
+    private IEnumerator AsyncChangeScene(string name)
+    {
+        yield return null;
+
+        _loadText.text = "Loading";
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(name);
+        asyncOperation.allowSceneActivation = false;
+
+        Debug.Log("Pro :" + asyncOperation.progress);
+
+        while (!asyncOperation.isDone)
+        {
+            float progress = Mathf.Clamp01((float)asyncOperation.progress / 0.9f);
+            UpdateBar(progress);
+
+            if (Mathf.Approximately(asyncOperation.progress, 0.9f))
+            {
+                _loadText.text = "Tap to Start";
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    asyncOperation.allowSceneActivation = true;
+                }
+            }
+            
+            yield return null;
+        }
+
+        DisablePanel();
     }
 }

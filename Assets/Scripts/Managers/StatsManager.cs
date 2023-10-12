@@ -44,6 +44,22 @@ public class StatsManager : MonoBehaviour
         //TO-DO: UI update system
     }
 
+    public void AddMedals(string levelName, Medals medal)
+    {
+        Medals newMedal = new();
+
+        if (_achievementList.ContainsKey(levelName))
+        {
+            newMedal.SetKill(medal.Kill ? true : _achievementList[levelName].Kill);
+            newMedal.SetRescue(medal.Rescue ? true : _achievementList[levelName].Rescue);
+            newMedal.SetUntouched(medal.Untouched ? true : _achievementList[levelName].Untouched);
+
+            _achievementList[levelName] = newMedal;
+        }
+        else
+            _achievementList.Add(levelName, medal);
+    }
+
     public T GetStatsValue<T>(string statsName, List<T> statsList)
     {
         for (int i = 0; i < _stats.Count; i++)
@@ -124,11 +140,17 @@ public class StatsManager : MonoBehaviour
 
     private void UpdateItemDisplay()
     {
-        UpgradeItem[] items = FindObjectsOfType<UpgradeItem>();
+        UpgradeItem[] items = FindObjectsByType<UpgradeItem>(FindObjectsSortMode.None);
+        LevelMenu[] levelMenus = FindObjectsByType<LevelMenu>(FindObjectsSortMode.None);
 
         foreach (UpgradeItem item in items)
         {
             item.UpdateItemDisplay();
+        }
+
+        foreach (LevelMenu levelMenu in levelMenus)
+        {
+            levelMenu.UpdateMenu();
         }
     }
 }

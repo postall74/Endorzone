@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
@@ -17,10 +18,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int _totalRescue;
     [SerializeField] private int _humanRescue;
     [SerializeField] private UnityEvent _onGameEnd;
+
+    private string _sceneName;
     #endregion
 
     #region Properties
     public UnityEvent OnGameEnd => _onGameEnd;
+    public Medals Medals => _medals;
     #endregion
 
     public void RegisterEnemy()
@@ -58,6 +62,7 @@ public class LevelManager : MonoBehaviour
     {
         Instance = this;
         _medals.SetUntouched(true);
+        _sceneName = SceneManager.GetActiveScene().name;
     }
 
     private IEnumerator CountDelay()
@@ -73,6 +78,8 @@ public class LevelManager : MonoBehaviour
         {
             _medals.SetRescue(true);
         }
+
+        StatsManager.Instance.AddMedals(_sceneName , _medals);
 
         _onGameEnd.Invoke();
     }

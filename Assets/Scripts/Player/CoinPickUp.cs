@@ -13,7 +13,8 @@ public class CoinPickUp : MonoBehaviour
         {
             PoolingManager.Instance.ReturnObject(other.gameObject);
             _onPickedUp.Invoke();
-            // TO-DO add some sort of coin counter
+
+            StatsManager.Instance.AddMoney(1);
         }
     }
 }

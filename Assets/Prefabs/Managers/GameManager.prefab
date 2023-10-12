@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8027903556646296268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3477586951811220889}
+  - component: {fileID: 8305429126124782167}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3477586951811220889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027903556646296268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8305429126124782167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027903556646296268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67a2ad930f9a964497bfd4152eb098d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lives: 35
+  _money: 500
+  _bulletUpgradeList:
+  - {fileID: 11400000, guid: 1dc86d5d5a9eef64d9a3dd756c420360, type: 2}
+  - {fileID: 11400000, guid: 2dbe55a696ac7604f9b58f6032a88aa2, type: 2}
+  - {fileID: 11400000, guid: 61fd48a7254bf6545bfa6d21d40157f8, type: 2}
+  - {fileID: 11400000, guid: 4ef8e2bb1dfda0141807703028259005, type: 2}
+  - {fileID: 11400000, guid: 7277f2a685b37ea4d8171c504c6fae72, type: 2}
+  _missileUpgradeList:
+  - {fileID: 11400000, guid: 350bae4bc2f4ba345828b9f08772a7a5, type: 2}
+  - {fileID: 11400000, guid: 39217160470520340ac02c8bf658a485, type: 2}
+  - {fileID: 11400000, guid: fd617220f5feb054a8ad2614e27c8c95, type: 2}
+  - {fileID: 11400000, guid: 6543917b2c5cdc045ad5e8ee7b10a36d, type: 2}
+  - {fileID: 11400000, guid: aafa444ac26d0dd44a62fed9c1a43040, type: 2}
+  _megaBombUpgradeList:
+  - _radius: 4
+    _damage: 25
+  - _radius: 5
+    _damage: 28
+  - _radius: 6
+    _damage: 31
+  - _radius: 7
+    _damage: 34
+  - _radius: 8
+    _damage: 37
+  _laserUpgradeList:
+  - _duration: 3
+  - _duration: 4
+  - _duration: 5
+  - _duration: 6
+  - _duration: 7
+  _shieldUpgradeList:
+  - _duration: 3
+  - _duration: 4
+  - _duration: 5
+  - _duration: 6
+  - _duration: 7
+  _healthUpgradeList:
+  - 35
+  - 45
+  - 55
+  - 60
+  - 65
+  _stats:
+  - _name: Bullet
+    _level: 1
+    _upgradeTime:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+  - _name: Missile
+    _level: 1
+    _upgradeTime:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+  - _name: MegaBomb
+    _level: 1
+    _upgradeTime:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+  - _name: Laser
+    _level: 1
+    _upgradeTime:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+  - _name: Shield
+    _level: 1
+    _upgradeTime:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+  - _name: Health
+    _level: 1
+    _upgradeTime:
+    - 2
+    - 0.6
+    - 0.7
+    - 1
+    - 1.5

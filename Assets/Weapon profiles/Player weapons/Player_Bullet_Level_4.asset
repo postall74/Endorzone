@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aad09acdcb03fa9459a78163e8471964, type: 3}
-  m_Name: Player_level_2
+  m_Name: Player_Bullet_Level_4
   m_EditorClassIdentifier: 
-  _speed: 25
-  _damage: 1
+  _speed: 32
+  _damage: 1.9
   _fireRate: 0
-  _interval: 0.25
-  _destroyRate: 2
-  _spread: 3
+  _interval: 0.4
+  _destroyRate: 3
+  _spread: 2
   _amount: 3

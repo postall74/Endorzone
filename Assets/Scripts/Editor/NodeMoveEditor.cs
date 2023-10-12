@@ -15,7 +15,7 @@ public class NodeMoveEditor : Editor
 
         if (_source == null)
         {
-            Debug.LogError("NodeMove component is missing.");
+            UnityEngine.Debug.LogError("NodeMove component is missing.");
             return;
         }
 
@@ -39,7 +39,7 @@ public class NodeMoveEditor : Editor
 
         if (_source == null)
         {
-            Debug.LogError("NodeMove component is missing.");
+            UnityEngine.Debug.LogError("NodeMove component is missing.");
             return;
         }
 
